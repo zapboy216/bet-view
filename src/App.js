@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import apiService from './apiService';  // Import the service
 import ContestListComponent from './ContestListComponent';
 
 function App() {
-  // Here you will fetch and pass the JSON data
-  const contests = {/* JSON data */};
+  const [sports, setSports] = useState([]);
+
+  useEffect(() => {
+    const loadSports = async () => {
+      const data = await apiService.fetchSports();
+      setSports(data);
+    };
+    
+    loadSports();
+  }, []);
 
   return (
     <div className="container">
       <h1>Sports Contests</h1>
-      <ContestListComponent contests={contests} />
+      <ContestListComponent sports={sports} />
     </div>
   );
 }
 
 export default App;
+
 
