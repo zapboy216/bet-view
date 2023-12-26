@@ -8,6 +8,7 @@ function App() {
   useEffect(() => {
     const loadSports = async () => {
       const data = await apiService.fetchSports();
+      console.log('Fetched Sports:', data);  // Log fetched data
       setSports(data);
     };
     
