@@ -15,6 +15,24 @@ const fetchSports = async () => {
   }
 };
 
+const fetchNFLOdds = async () => {
+  try {
+    const response = await axios.get(`${BASE_URL}/v4/sports/americanfootball_nfl/odds/`, {
+      params: {
+        apiKey: API_KEY,
+        regions: 'us',
+        markets: 'h2h,spreads',
+        oddsFormat: 'american'
+      }
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching NFL odds:', error);
+    return [];
+  }
+};
+
 export default {
   fetchSports,
+  fetchNFLOdds,  // Add this export
 };
