@@ -1,4 +1,5 @@
-const axios = require('axios')
+const axios = require('axios');
+
 
 // An api key is emailed to you when you sign up to a plan
 // Get a free API key at https://api.the-odds-api.com/
