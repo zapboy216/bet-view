@@ -4,7 +4,7 @@ import apiService from './apiService'; // Import the API service
 
 function App() {
  
-  const [nflOdds, setNflOdds] = useState([]); // State for NFL odds data
+const [nflOdds, setNflOdds] = useState([]); // State for NFL odds data
 
   
 
