@@ -6,9 +6,7 @@ function App() {
  
 const [nflOdds, setNflOdds] = useState([]); // State for NFL odds data
 
-  
-
-  // Fetch NFL odds data
+    // Fetch NFL odds data
   useEffect(() => {
     const loadNFLOdds = async () => {
       const data = await apiService.fetchNFLOdds();
@@ -19,6 +17,8 @@ const [nflOdds, setNflOdds] = useState([]); // State for NFL odds data
 
   return (
     <div className="container">
+
+
      
       <section>
         <h2>NFL Odds</h2>
